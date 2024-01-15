@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Base.Theme.LoginAuth"
+    android:background="@drawable/background_login"
+    tools:context=".registerAuth">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:cardCornerRadius="10dp"
+        android:layout_marginHorizontal="15dp"
+        app:cardElevation="30dp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="10dp">
+
+
+            <ImageView
+                android:id="@+id/reg_logo"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:src="@drawable/login_icon"
+
+                app:layout_constraintBottom_toTopOf="@id/regTextView1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:contentDescription="Its Logo"
+                tools:ignore="HardcodedText"/>
+
+
+            <TextView
+                android:id="@+id/regTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+
+                android:layout_marginHorizontal="10dp"
+                android:text="Sign Up"
+                android:textColor="@color/black"
+
+                android:textSize="35sp"
+
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/reg_logo"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/reg_logo"
+                tools:ignore="HardcodedText"/>
+
+
+            <TextView
+                android:id="@+id/regTextView1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+
+                android:text="Enter Name"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="10dp"
+
+                app:layout_constraintBottom_toTopOf="@id/regNameInput"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reg_logo"
+                tools:ignore="HardcodedText"/>
+
+            <EditText
+                android:id="@+id/regNameInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter your Name..."
+                android:textSize="20sp"
+                android:autofillHints="name"
+
+                android:inputType="text"
+                android:layout_marginHorizontal="15dp"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/regTextView1"
+                app:layout_constraintBottom_toTopOf="@id/regTextView2"
+                tools:ignore="HardcodedText"
+                />
+
+            <TextView
+                android:id="@+id/regTextView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="15dp"
+
+                android:text="Enter E-mail address"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+
+                app:layout_constraintTop_toBottomOf="@+id/regNameInput"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/regEmailInput"
+                tools:ignore="HardcodedText"
+                />
+
+
+            <EditText
+                android:id="@+id/regEmailInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter your E-mail..."
+                android:textSize="20sp"
+                android:inputType="textEmailAddress"
+
+                android:layout_marginHorizontal="15dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/regTextView2"
+                app:layout_constraintBottom_toTopOf="@id/regTextView3"
+                tools:ignore="HardcodedText"
+                />
+
+            <TextView
+                android:id="@+id/regTextView3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="15dp"
+
+                android:text="Enter Phone Number"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+
+                app:layout_constraintTop_toBottomOf="@+id/regEmailInput"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/regPhoneInput"
+                tools:ignore="HardcodedText"
+                />
+
+
+            <EditText
+                android:id="@+id/regPhoneInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter your Phone number..."
+                android:textSize="20sp"
+                android:inputType="phone"
+
+                android:layout_marginHorizontal="15dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/regTextView3"
+                app:layout_constraintBottom_toTopOf="@id/regTextView4"
+                tools:ignore="HardcodedText"
+                />
+            <TextView
+                android:id="@+id/regTextView4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="15dp"
+
+                android:text="Enter Password"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+
+                app:layout_constraintTop_toBottomOf="@+id/regPhoneInput"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/regPasswordInput"
+                tools:ignore="HardcodedText"
+                />
+
+
+            <EditText
+                android:id="@+id/regPasswordInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter your password..."
+                android:textSize="20sp"
+                android:inputType="textPassword"
+
+                android:layout_marginHorizontal="15dp"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/regTextView4"
+                app:layout_constraintBottom_toBottomOf="@id/registerLoginBtn"
+                tools:ignore="HardcodedText"
+                />
+
+            <Button
+                android:id="@+id/registerLoginBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15sp"
+                android:layout_marginBottom="40dp"
+                android:layout_marginTop="25dp"
+
+                android:background="@drawable/submit_btn"
+                android:text="Register"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+
+                app:layout_constraintTop_toBottomOf="@id/regPasswordInput"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:ignore="HardcodedText"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
