@@ -14,7 +14,7 @@ class registerAuth : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     //dataBinding
     private lateinit var binding:ActivityRegisterAuthBinding
-    //for sharing user info with firestore database
+    //for sharing user info with Cloud firestore (firestore database)
     private lateinit var databaseFirestore: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?)
@@ -27,7 +27,7 @@ class registerAuth : AppCompatActivity() {
         //register and authorising
         auth = FirebaseAuth.getInstance()
 
-        //instance for database Firestore
+        //instance for Cloud firestore (database Firestore)
         databaseFirestore = FirebaseFirestore.getInstance()
 
         //#main
@@ -52,14 +52,21 @@ class registerAuth : AppCompatActivity() {
                         // ** here we will register the user as well as add the data to the FIREBASE Database also
                         if(task.isEmpty)
                         {
-                            auth.createUserWithEmailAndPassword(regEmail,regPassword).addOnCompleteListener(this){task->
+                            auth.createUserWithEmailAndPassword(regEmail,regPassword).addOnCompleteListener(this){
+                                    task->
                                 if(task.isSuccessful)
                                 {
                                     Users.document(regEmail).set(user)
                                     Toast.makeText(this,"Welcome 😁",Toast.LENGTH_LONG).show()
-                                    val intent = Intent(this,MainActivity::class.java)
+
+                                    //-------------------------------------------------------------------------------
+                                    //sharing the email rest values we will get from fireStore
+                                    val intent = Intent(this,MainActivity::class.java).apply {
+                                        putExtra("email",regEmail)
+                                    }
                                     startActivity(intent)
                                     finish()
+                                    //-------------------------------------------------------------------------------
                                 }
                                 else{
                                     Toast.makeText(this,"Oppss Something went wrong\n Please try again",Toast.LENGTH_LONG).show()
@@ -74,7 +81,7 @@ class registerAuth : AppCompatActivity() {
                             Handler(Looper.getMainLooper()).postDelayed({
                                 val intent = Intent(this,loginAuth::class.java)
                                 startActivity(intent)
-                            }, 2000)
+                            }, 1000)
                         }
                     }
             }

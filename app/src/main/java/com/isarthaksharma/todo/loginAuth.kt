@@ -25,6 +25,7 @@ class loginAuth : AppCompatActivity() {
             startActivity(intent)
         }
 
+
         //fireBase authentication
         auth = FirebaseAuth.getInstance()
 
@@ -40,10 +41,16 @@ class loginAuth : AppCompatActivity() {
 
                         if(task.isSuccessful) //user enter correct credentials
                         {
+                            //-------------------------------------------------------------------------------
+                            //sharing the email rest values we will get from fireStore
                             Toast.makeText(this,"Welcome Back 👋",Toast.LENGTH_LONG).show()
-                            val intent = Intent(this,MainActivity::class.java)
+                            val intent = Intent(this,MainActivity::class.java).apply {
+                                putExtra("email",email)
+                            }
                             startActivity(intent)
                             finish()
+                            //-------------------------------------------------------------------------------
+
                         }
                         else //user entered wrong credentials
                         {

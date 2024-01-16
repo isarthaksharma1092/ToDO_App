@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E1C295"
     tools:context=".MainActivity">
 
     <androidx.cardview.widget.CardView
@@ -30,7 +31,8 @@
                 android:text="Your Name is 'Name'"
                 android:layout_marginTop="15dp"
                 android:textSize="20sp"
-                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:gravity="left"
                 tools:ignore="HardcodedText"/>
 
 
@@ -40,8 +42,9 @@
                 android:layout_height="wrap_content"
                 android:text="Your Email Address is 'email'"
                 android:textSize="20sp"
+                android:paddingLeft="15dp"
                 android:layout_marginTop="15dp"
-                android:gravity="center"
+                android:gravity="left"
                 tools:ignore="HardcodedText"/>
 
 
@@ -51,7 +54,8 @@
                 android:layout_height="wrap_content"
                 android:text="Your Phone Number is 'Phone'"
                 android:textSize="20sp"
-                android:gravity="center"
+                android:gravity="left"
+                android:paddingLeft="15dp"
                 android:layout_marginVertical="15dp"
                 tools:ignore="HardcodedText"/>
 
