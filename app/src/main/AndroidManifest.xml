@@ -13,28 +13,33 @@
         android:theme="@style/Theme.ToDo"
         tools:targetApi="31">
         <activity
-            android:name=".registerAuth"
-            android:exported="false"
-            android:theme="@style/Base.Theme.LoginAuth"/>
-        <activity
-            android:name=".loginAuth"
-            android:exported="false"
-            android:theme="@style/Base.Theme.LoginAuth">
-
-            </activity>
-        <activity
-            android:name=".MainActivity"
+            android:name=".splash_Screen"
             android:exported="true"
             android:theme="@style/Base.Theme.LoginAuth">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
 
+        <activity
+            android:name=".registerAuth"
+            android:exported="false"
+            android:theme="@style/Base.Theme.LoginAuth">
+        </activity>
+
+        <activity
+            android:name=".loginAuth"
+            android:exported="false"
+            android:theme="@style/Base.Theme.LoginAuth">
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:theme="@style/Base.Theme.LoginAuth">
         </activity>
 
     </application>
-
 </manifest>
